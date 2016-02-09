@@ -54,28 +54,28 @@ train = mongo.connect('mongodb://localhost:27017/trainSchedule', function(err, d
 
 		case '5':
 		// Find and print 10 longest routes in terms of number of stations.
-		grouping.aggregateFunction(train,'numberOfStation' ,-1, numberOfRecords).toArray(function(error,docs) {
+		grouping.aggregateFunction(train,'numberOfStation', -1, numberOfRecords).toArray(function(error,docs) {
 			table.displayData(docs, 'number of station');
 		});
 		break;
 
 		case '6':
 		// Find and print 10 shortest routes in terms of number of stations.
-		grouping.aggregateFunction(train,'numberOfStation' ,1, numberOfRecords).limit(numberOfRecords).toArray(function(error,docs) {
+		grouping.aggregateFunction(train,'numberOfStation', 1, numberOfRecords).limit(numberOfRecords).toArray(function(error,docs) {
 			table.displayData(docs, 'number of station');
 		});
 		break;
 
 		case '7':
 		// Find and print 10 most visited stations.
-		grouping.aggregateFunction(train,'visitedStation',-1, numberOfRecords).toArray(function(error,docs) {
+		grouping.aggregateFunction(train,'visitedStation', -1, numberOfRecords).toArray(function(error,docs) {
 			table.displayData(docs, 'visited station');
 		});
 		break;
 
 		case '8':
 		// Find and print 10 least visited stations.
-		grouping.aggregateFunction(train,'visitedStation',1, numberOfRecords).toArray(function(error,docs) {
+		grouping.aggregateFunction(train,'visitedStation', 1, numberOfRecords).toArray(function(error,docs) {
 			table.displayData(docs, 'visited station');
 		});
 		break;
