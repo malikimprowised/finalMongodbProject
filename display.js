@@ -19,7 +19,7 @@ exports.displayData = function (docs, field) {
 		docs.forEach(function(doc) {
 			table.push(
 					[
-					doc._id,
+					Number(doc._id.slice(1,6)),
 					doc.trainName,
 					doc.operation,
 					doc.sourceStationCode,
